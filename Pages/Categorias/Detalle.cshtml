@@ -1,0 +1,29 @@
+﻿@page
+@model Agenda.Pages.Categorias.DetalleModel
+@{
+	ViewData["Title"] = "Detelle";
+}
+<nav aria-label="breadcrumb">
+	
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a asp-page="Index">
+				Categorias
+				</a>
+		</li>
+		<li class="breadcrumb-item active" aria-current="page">
+			Detalle
+		</li>
+	</ol>
+</nav>
+
+<div class="card">
+		<div class="card-header">
+			<h3 class="card-title">@Model.Categoria.Nombre</h3>
+		</div>
+		<div class="card-body">
+			<label>Fecha Creacion:</label>
+			<p class="card-text">@Model.Categoria.FechaCreacion</p>
+		</div>
+</div>
+
