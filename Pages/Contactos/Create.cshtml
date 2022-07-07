@@ -1,0 +1,57 @@
+﻿@page
+@model Agenda.Pages.Contactos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<nav aria-label="breadcrumb">
+	
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a asp-page="Index">
+				Contactos
+				</a>
+		</li>
+		<li class="breadcrumb-item active" aria-current="page">
+			Crear
+		</li>
+	</ol>
+	
+</nav>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Contacto.Nombre" class="control-label"></label>
+                <input asp-for="Contacto.Nombre" class="form-control" />
+                <span asp-validation-for="Contacto.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacto.Apellido" class="control-label"></label>
+                <input asp-for="Contacto.Apellido" class="form-control" />
+                <span asp-validation-for="Contacto.Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacto.Telefono" class="control-label"></label>
+                <input asp-for="Contacto.Telefono" class="form-control" />
+                <span asp-validation-for="Contacto.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacto.IdCategoria" class="control-label">Categoria</label>
+                <select asp-for="Contacto.IdCategoria" class ="form-control" asp-items="ViewBag.IdCategoria"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary mt-3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -23,11 +23,26 @@ namespace Agenda.Pages.Categorias
             Categoria = db.Categorias.Find(id);
         }
 
-        public async Task<IActionResult> OnPost()
+        public IActionResult OnPost()
         {
+            var Contactos = db.Contactos
+                 .Where(c => c.IdCategoria == Categoria.Id);
+
+            if(Contactos.Count() > 0)
+            {
+                foreach (var contact in Contactos)
+                {
+                    contact.IdCategoria = null;
+                    contact.Categoria = null;
+
+                    db.Entry(contact).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                }
+            }
+            
+              
             db.Categorias.Remove(Categoria);
-            await db.SaveChangesAsync();
-            return RedirectToPage("Index");
+            db.SaveChanges();
+            return RedirectToPage("./Index");
         }
     }
 }

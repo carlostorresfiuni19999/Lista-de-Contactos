@@ -27,7 +27,14 @@ namespace Agenda.Pages.Categorias
         {
             if (ModelState.IsValid)
             {
-                db.Entry(Categoria).State = EntityState.Modified;
+                var CategoriaDb = await db.Categorias.FindAsync(Categoria.Id);
+
+                if(CategoriaDb == null)
+                {
+                    return Page();
+                }
+                CategoriaDb.Nombre = Categoria.Nombre;
+                CategoriaDb.FechaCreacion = Categoria.FechaCreacion;
                 await db.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

@@ -27,6 +27,11 @@
 			<p class="card-text">@Model.Categoria.FechaCreacion</p>
 		</div>
 	</div>
-	<button class="btn btn-danger" asp-action="@Model.OnPost()">Borrar</button>
+
+	<form method="post">
+		<input type="hidden" asp-for="Categoria.Id" />
+		<button type="submit" class="btn btn-danger">Borrar</button>
+
+	</form>
 	
 

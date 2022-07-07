@@ -1,0 +1,67 @@
+﻿@page
+@model Agenda.Pages.Contactos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<nav aria-label="breadcrumb">
+	
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a asp-page="Index">
+				Contactos
+				</a>
+		</li>
+		<li class="breadcrumb-item active" aria-current="page">
+			Eliminar
+		</li>
+	</ol>
+</nav>
+
+<h3 class="display-3 text-danger">Seguro que desea borrar? Esta accion es irreversible</h3>
+<div>
+    <h4>Contacto</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.Apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.Apellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.Telefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.Telefono)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto.FechaCreacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contacto.FechaCreacion)
+        </dd>
+        @if(Model.Contacto.Categoria != null)
+        {
+           <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Contacto.Categoria)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Contacto.Categoria.Nombre)
+            </dd> 
+        }
+        
+    </dl>
+    <form method="post">
+        <input type = "hidden" asp-for = "Contacto.Id" />
+        <button type = "submit" class="btn btn-danger"> Eliminar</button>
+    </form>
+</div>

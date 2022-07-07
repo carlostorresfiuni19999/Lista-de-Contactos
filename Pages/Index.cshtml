@@ -4,7 +4,66 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="principal-container">
+        <div class="row">
+            <div class="col-12 title-container">
+                <h1 class="display-1 principal-title">Contacto</h1>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <h6 class="display-6 principal-subtitle">
+                Esta es una poderosa app para crear contacto, listarla, editarla,
+                y Poder clasificarla en Categorias, es codigo libre, implementado
+                con .net core
+                </h6>
+            </div>
+        </div>
+   
+    </div>
+    <div class="mt-3 body-container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title text-primary">
+                            Categorias
+                        </h3>
+                    </div>
+                    <div class="card-body ">
+                        <p class="card-text">
+                            Crea y Administras Categorias para agrupar sus contactos
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" asp-page="./Categorias/Index">Ver Mas</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title text-primary">
+                            Contactos
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Crea y Administras Contactos, agrupalas en Categorias
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" asp-page="./Contactos/Index">Ver Mas</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+
 </div>
+   
+

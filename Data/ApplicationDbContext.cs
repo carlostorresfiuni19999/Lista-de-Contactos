@@ -9,5 +9,6 @@ namespace Agenda.Data
         { }
 
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Contacto> Contactos { get; set; }
     }
 }
